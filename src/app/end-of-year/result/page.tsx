@@ -3,6 +3,8 @@ import { Hero } from "~/app/end-of-year/_components/hero";
 import CardList from "~/app/end-of-year/result/_components/card-list";
 import db from "~/lib/db";
 
+export const dynamic = "force-dynamic";
+
 export default async function VotingResultPage() {
   const record = await db.vote.findMany({
     where: {
