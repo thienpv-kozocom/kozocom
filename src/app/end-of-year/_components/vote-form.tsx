@@ -98,10 +98,13 @@ export function VoteForm() {
                   <RadioGroup
                     onValueChange={field.onChange}
                     defaultValue={field.value}
-                    className="grid grid-cols-1 gap-3 lg:grid-cols-2"
+                    className="grid grid-cols-1 gap-4 lg:grid-cols-2"
                   >
                     {TEAMS.map((team) => (
-                      <FormItem key={team.id} className="relative h-[150px]">
+                      <FormItem
+                        key={team.id}
+                        className="relative h-[110px] md:h-[150px]"
+                      >
                         <FormControl>
                           <RadioGroupItem
                             value={team.id}

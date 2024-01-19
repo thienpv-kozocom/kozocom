@@ -2,7 +2,7 @@ import db from "~/lib/db";
 
 export const POST = async (request: Request) => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const { userId } = request.body as any;
+  const { userId } = await request.json();
   const res = await db.vote.findFirst({
     where: {
       userId,

@@ -12,7 +12,7 @@ type Props = {
 
 export function Hero({ headingContent, isShowParticles = true }: Props) {
   return (
-    <div className="relative pt-[5rem] bg-dot-white/20">
+    <div className="relative bg-black pt-[5rem] bg-dot-white/20">
       <Spotlight
         className="left-0 top-40 md:-top-20 md:left-60"
         fill="rgb(14 165 233)"

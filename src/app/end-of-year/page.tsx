@@ -38,7 +38,7 @@ export default function EndOfYearPage() {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ userId: session.user.id }),
+          body: JSON.stringify({ userId: session.user.userId }),
         });
         const data = await res.json();
         if (data?.res?.votedId) setIsVoted(data);

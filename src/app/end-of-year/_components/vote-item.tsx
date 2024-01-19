@@ -55,7 +55,7 @@ export default function VoteItem({
       containerClassName="h-full"
     >
       <Card className="relative h-full w-full cursor-pointer border-none bg-transparent">
-        <CardContent className="grid h-full grid-cols-3 gap-4 p-0">
+        <CardContent className="grid h-full grid-cols-3 gap-1 p-0 md:gap-4">
           <div className="relative">
             <Image
               src={image}
@@ -64,11 +64,13 @@ export default function VoteItem({
               className="rounded-l-[25px] object-cover"
             />
           </div>
-          <div className="relative col-span-2 space-y-2 p-4">
-            <h3 className="text-base font-extrabold text-blue-500 brightness-150">
+          <div className="relative col-span-2 space-y-2 p-2 md:p-4">
+            <h3 className="text-sm font-extrabold text-blue-500 brightness-150 md:text-base">
               {title}
             </h3>
-            <p className="font-bold uppercase text-slate-300">{description}</p>
+            <p className="text-xs font-bold uppercase text-slate-300 md:text-base">
+              {description}
+            </p>
             {result && totalVoted && (
               <div className="progress-infinite absolute -left-4 bottom-0 right-0 h-2">
                 <div
