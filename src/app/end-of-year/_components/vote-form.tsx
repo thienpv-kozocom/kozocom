@@ -6,15 +6,6 @@ import { useForm } from "react-hook-form";
 import * as z from "zod";
 import VoteItem from "~/app/end-of-year/_components/vote-item";
 
-import { Button } from "~/components/ui/button";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-} from "~/components/ui/dialog";
 import {
   Form,
   FormControl,
@@ -23,8 +14,6 @@ import {
   FormLabel,
   FormMessage,
 } from "~/components/ui/form";
-import { Input } from "~/components/ui/input";
-import { Label } from "~/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "~/components/ui/radio-group";
 import { toast } from "~/components/ui/use-toast";
 import { vote } from "~/server/vote";
@@ -85,6 +74,7 @@ export function VoteForm() {
         ),
       });
       setIsLoading(false);
+      window.location.reload();
     } catch (error) {
       toast({
         title: "Bình chọn thất bại!",
