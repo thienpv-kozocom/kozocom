@@ -41,7 +41,7 @@ export default function EndOfYearPage() {
           body: JSON.stringify({ userId: session.user.id }),
         });
         const data = await res.json();
-        if (data) setIsVoted(data);
+        if (data?.res?.votedId) setIsVoted(data);
         setIsLoading("stopped");
       } catch (error) {
         setIsLoading("stopped");

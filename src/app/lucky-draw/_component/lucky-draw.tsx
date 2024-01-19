@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import CongratulationParticles from "~/app/seminar-award/_components/CongratulationParticles";
 import { motion } from "framer-motion";
 import FireWork from "~/components/shared/firework";
 
@@ -18,7 +17,17 @@ export default function LuckyDraw({ randomState }: { randomState: string }) {
       intervalTimer!.current = setInterval(() => {
         const randomIndex = Math.floor(Math.random() * luckyNumbers.length);
         setLuckyNumber(luckyNumbers[randomIndex]);
-      }, 100);
+      }, 20);
+      return;
+    }
+    if (randomState === "slow") {
+      if (intervalTimer.current) {
+        clearInterval(intervalTimer.current);
+      }
+      intervalTimer!.current = setInterval(() => {
+        const randomIndex = Math.floor(Math.random() * luckyNumbers.length);
+        setLuckyNumber(luckyNumbers[randomIndex]);
+      }, 140);
       return;
     }
 
@@ -28,7 +37,7 @@ export default function LuckyDraw({ randomState }: { randomState: string }) {
         setLuckyNumber(luckyNumbers[randomIndex]);
         luckyNumbers.splice(randomIndex, 1);
         localStorage.setItem("luckyNumbers", JSON.stringify(luckyNumbers));
-      }, 250);
+      }, 280);
       if (intervalTimer.current) {
         clearInterval(intervalTimer.current);
       }
@@ -40,9 +49,10 @@ export default function LuckyDraw({ randomState }: { randomState: string }) {
   useEffect(() => {
     localStorage.setItem(
       "luckyNumbers",
-      JSON.stringify(Array.from({ length: 100 }, (_, i) => i + 1))
+      JSON.stringify(Array.from({ length: 144 }, (_, i) => i + 1))
     );
   }, []);
+
   return (
     <div className="absolute inset-0 flex items-center justify-center text-[9vw] font-extrabold">
       <motion.div
@@ -60,7 +70,7 @@ export default function LuckyDraw({ randomState }: { randomState: string }) {
           : {})}
         className="text-blue-100"
       >
-        {luckyNumber}
+        {luckyNumber / 100 < 1 ? `0${luckyNumber}` : luckyNumber}
       </motion.div>
       {randomState === "stop" && (
         <FireWork id={"canvas-left"} className="absolute left-0" />

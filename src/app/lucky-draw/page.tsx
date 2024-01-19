@@ -14,8 +14,11 @@ export default function EndOfYearPage() {
   const handleClick = () => {
     setRandomState("starting");
     setTimeout(() => {
+      setRandomState("slow");
+    }, 10000);
+    setTimeout(() => {
       setRandomState("stop");
-    }, 5000);
+    }, 15000);
   };
 
   return (
