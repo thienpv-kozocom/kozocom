@@ -41,7 +41,7 @@ export default function VoteItem({
     if (isShowingResult === "starting") {
       timer.current = setInterval(() => {
         setVoteCount((prev) => prev + 1);
-      }, 200);
+      }, 400);
     }
   }, [isShowingResult]);
 

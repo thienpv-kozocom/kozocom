@@ -49,7 +49,7 @@ export default function LuckyDraw({ randomState }: { randomState: string }) {
   useEffect(() => {
     localStorage.setItem(
       "luckyNumbers",
-      JSON.stringify(Array.from({ length: 144 }, (_, i) => i + 1))
+      JSON.stringify(Array.from({ length: 145 }, (_, i) => i + 1))
     );
   }, []);
 

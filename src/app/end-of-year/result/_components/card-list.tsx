@@ -128,7 +128,7 @@ export default function CardList({ groupedRecord }: Props) {
               () => {
                 setIsShowingResult("stop");
               },
-              Math.max(...itemsVote.map((item) => item.count)) * 200 + 3000
+              Math.max(...itemsVote.map((item) => item.count)) * 400 + 3000
             );
           }}
         >

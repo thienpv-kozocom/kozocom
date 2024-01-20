@@ -14,8 +14,12 @@ export function Hero({ headingContent, isShowParticles = true }: Props) {
   return (
     <div className="relative pt-[5rem] bg-dot-white/20">
       <Spotlight
-        className="left-0 top-40 md:-top-20 md:left-60"
+        className="left-0 top-40 animate-spotlight md:-top-20 md:left-60 "
         fill="rgb(14 165 233)"
+      />
+      <Spotlight
+        className="animate-spotlight-reverse right-0 top-40 md:-top-20 md:right-60"
+        fill="#3889ec"
       />
       <motion.h1
         initial={{
