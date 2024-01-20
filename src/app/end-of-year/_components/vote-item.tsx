@@ -102,7 +102,7 @@ export default function VoteItem({
         )}
       </Card>
       {selected && (
-        <div className="absolute inset-0 rounded-[1.5rem] bg-blue-700/20"></div>
+        <div className="absolute inset-0 rounded-[1.5rem] border-[5px] border-blue-400 bg-blue-600/20"></div>
       )}
     </Button>
   );
