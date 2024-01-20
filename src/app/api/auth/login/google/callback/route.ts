@@ -4,6 +4,8 @@ import type { NextRequest } from "next/server";
 import { auth, googleAuth } from "~/lib/auth";
 // import { sendMail } from "~/lib/resend";
 
+export const maxDuration = 10; // This function can run for a maximum of 10 seconds
+
 export const GET = async (request: NextRequest) => {
   const storedState = cookies().get("google_oauth_state")?.value;
   const url = new URL(request.url);
