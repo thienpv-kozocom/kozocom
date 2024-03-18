@@ -34,7 +34,7 @@
     "@tsparticles/slim": "^3.0.3",
     "@uploadthing/react": "^6.1.0",
     "date-fns": "^2.30.0",
-    "framer-motion": "^10.17.9",
+    "framer-motion": "^11.0.14",
     "lucia": "^2.7.6",
     "lucide-react": "^0.294.0",
     "mini-svg-data-uri": "^1.4.4",
